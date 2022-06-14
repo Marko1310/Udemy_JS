@@ -71,7 +71,7 @@ function fruitProcessor(apples, oranges) {
 }
 
 console.log(fruitProcessor(2, 3));
-*/
+
 const calcAge = function (birthYear) {
     return 2037 - birthYear;
 }
@@ -89,3 +89,54 @@ const yearsUntilRetirement = function (birthYear, firstName) {
 }
 
 console.log(yearsUntilRetirement(1991, 'John'));
+
+
+const friends = ['michael', 'steven', 'peter'];
+console.log(friends[1]);
+
+const year = new Array(1991, 1984, 2008, 2020);
+console.log(year[2]);
+
+console.log(friends.length);
+
+console.log(friends[friends.length - 1]);
+
+friends[2] = 'Jay';
+
+console.log(friends);
+
+//
+const calcAge = function (birthYear) {
+    return 2037 - birthYear;
+}
+
+const years = [1990, 1967, 2002, 2012, 2018];
+
+console.log(calcAge(years));
+
+const age1 = calcAge(years[0]);
+const age2 = calcAge(years[1]);
+const age3 = calcAge(years[years.length - 1]);
+
+console.log(age1, age2, age3);
+
+const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years.length - 1)];
+
+console.log(ages);
+*/
+
+const friends = ['Michael', 'Steven', 'Peter'];
+const newLength = friends.push('Jay');
+console.log(friends);
+console.log(newLength);
+
+friends.unshift('John');
+console.log(friends);
+
+console.log(friends.includes('Steven'));
+
+if (friends.includes('Peter')) {
+    console.log('You have a friend called Peter')
+} else {
+    console.log('He is not here');
+}
