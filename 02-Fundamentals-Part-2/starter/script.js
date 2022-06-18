@@ -173,7 +173,7 @@ if (Jonas[interestedIn]) {
 
 //Challenge
 console.log(`${Jonas.firstName} has ${Jonas.friends.length} friends, and his best friend is called ${Jonas.friends[0]}`);
-*/
+
 
 const Jonas = {
     firstName: 'Jonas',
@@ -202,3 +202,94 @@ console.log(Jonas.calcAge());
 console.log(Jonas.age);
 
 console.log(Jonas.getSummary());
+
+
+for (let rep = 1; rep <= 10; rep++) {
+    console.log(`Lifting weights repetition ${rep}`);
+}
+
+
+const jonasArray = [
+    'Jonas',
+    'Schmideman',
+    2037 - 1991,
+    'teacher',
+    ['Michael', 'Peter', 'Steven']
+];
+
+const types = [];
+
+for (let i = 0; i <= jonasArray.length - 1; i++) {
+    console.log(jonasArray[i], typeof jonasArray[i]);
+
+    types.push(typeof jonasArray[i]);
+}
+
+console.log(types)
+
+const years = [1991, 2007, 1969, 2020];
+
+const age = [];
+
+console.log('ONLY STRINGS');
+for (let j = 0; j < years.length; j++) {
+    // const age = 2037 - years[j];
+    // console.log(age);
+
+    if (typeof jonasArray[j] !== 'string') {
+        continue;
+    }
+    console.log(jonasArray[j], typeof jonasArray[j]);
+}
+
+console.log('BREAK WITH NUMBER');
+for (let j = 0; j < years.length; j++) {
+    // const age = 2037 - years[j];
+    // console.log(age);
+
+    if (typeof jonasArray[j] === 'number') {
+        break;
+    }
+    console.log(jonasArray[j], typeof jonasArray[j]);
+}
+
+
+const jonas = [
+    'Jonas',
+    'Schmideman',
+    2037 - 1991,
+    'teacher',
+    ['Michael', 'Peter', 'Steven']
+];
+
+for (let i = jonas.length - 1; i >= 0; i--) {
+    console.log(i, jonas[i]);
+}
+
+for (let exercise = 1; exercise <= 3; exercise++) {
+    console.log(`-------Starting exercise ${exercise}`);
+
+    for (let rep = 1; rep <= 5; rep++) {
+        console.log(`Exercise ${exercise} repetition ${rep}`);
+    }
+}
+*/
+
+// for (let rep = 1; rep <= 10; rep++) {
+//     console.log(`Lifting weights repetition ${rep}`);
+// }
+
+// console.log('-------------');
+
+// let rep = 1;
+// while (rep <= 10) {
+//     console.log(`Lifting weights repetition ${rep}`);
+//     rep++;
+// }
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+while (dice !== 6) {
+    console.log(`You roled the a ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+}
