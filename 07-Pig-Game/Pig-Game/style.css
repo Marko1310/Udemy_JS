@@ -1,0 +1,148 @@
+body {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(223, 155, 166),
+    rgb(146, 47, 146)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Nunito";
+  font-weight: 400;
+}
+
+.mainBox {
+  display: flex;
+  height: 35rem;
+  max-width: 800px;
+  border-radius: 20px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.35);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.player1Box {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.4);
+  width: 50%;
+  padding: 2rem;
+  align-items: center;
+  transition: all 0.75s;
+  color: rgb(48, 48, 48);
+  font-size: 22px;
+}
+
+.player2Box {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.4);
+  width: 50%;
+  padding: 2rem;
+  align-items: center;
+  transition: all 0.75s;
+  color: rgb(48, 48, 48);
+  font-size: 22px;
+}
+
+.active {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+.name {
+  margin: 0;
+  margin-bottom: 3rem;
+}
+
+.player1TotalScore {
+  margin-bottom: auto;
+  font-size: 70px;
+  color: #c7365f;
+}
+
+.player2TotalScore {
+  margin-bottom: auto;
+  font-size: 70px;
+  color: #c7365f;
+}
+
+p {
+  font-size: 25px;
+  color: #c8c1c3;
+  font-weight: 900;
+  margin: 0;
+}
+
+.currentScore {
+  margin-top: 0.5rem;
+  font-size: 35px;
+}
+
+.player1CurrentScore {
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 50%;
+  height: 8rem;
+  border-radius: 20px;
+  background-color: #c7365f;
+  align-items: center;
+  padding: 20px;
+}
+
+.player2CurrentScore {
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 50%;
+  height: 8rem;
+  border-radius: 20px;
+  background-color: #c7365f;
+  align-items: center;
+  padding: 20px;
+}
+
+.btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f8f8f8;
+  border-radius: 20px;
+  border-style: none;
+  opacity: 0.7;
+  padding: 10px;
+  font: inherit;
+  font-weight: bold;
+  transition-duration: 0.2s;
+}
+
+.btn:hover {
+  color: white;
+  opacity: 1;
+}
+
+.newGame {
+  top: 3rem;
+}
+
+.newGame:hover {
+  background-color: #4caf50;
+}
+
+.rollDice {
+  top: 26rem;
+}
+
+.rollDice:hover {
+  background-color: #3470b0;
+}
+
+.hold {
+  top: 31rem;
+}
+
+.hold:hover {
+  background-color: #d54141;
+}
