@@ -8,7 +8,7 @@ body {
   align-items: center;
   justify-content: center;
   font-family: "Nunito";
-  font-weight: 400;
+  font-weight: 200;
 }
 
 .mainBox {
@@ -20,6 +20,7 @@ body {
   background-color: rgba(255, 255, 255, 0.35);
   box-sizing: border-box;
   overflow: hidden;
+  position: relative;
 }
 
 .player1Box {
@@ -30,8 +31,9 @@ body {
   padding: 2rem;
   align-items: center;
   transition: all 0.75s;
-  color: rgb(48, 48, 48);
+  color: rgb(92, 92, 92);
   font-size: 22px;
+  font-weight: 600;
 }
 
 .player2Box {
@@ -42,12 +44,14 @@ body {
   padding: 2rem;
   align-items: center;
   transition: all 0.75s;
-  color: rgb(48, 48, 48);
+  color: rgb(92, 92, 92);
   font-size: 22px;
 }
 
 .active {
   background-color: rgba(255, 255, 255, 0.35);
+  font-weight: 900;
+  color: rgb(1, 1, 1);
 }
 .name {
   margin: 0;
@@ -124,7 +128,7 @@ p {
 }
 
 .newGame {
-  top: 3rem;
+  top: 2.5rem;
 }
 
 .newGame:hover {
@@ -145,4 +149,17 @@ p {
 
 .hold:hover {
   background-color: #d54141;
+}
+
+.dice {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10%;
+  height: 15%;
+  top: 15rem;
+}
+
+.hidden {
+  display: none;
 }
