@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pig Game</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap"
       rel="stylesheet"
@@ -13,7 +12,7 @@
   </head>
   <body>
     <div class="mainBox">
-      <div class="player1Box active">
+      <div class="player1Box">
         <h1 class="name">PLAYER 1</h1>
         <p class="player1TotalScore">0</p>
         <div class="player1CurrentScore">
@@ -22,7 +21,7 @@
         </div>
       </div>
 
-      <div class="player2Box active">
+      <div class="player2Box">
         <h1 class="name">PLAYER 2</h1>
         <p class="player2TotalScore">0</p>
         <div class="player2CurrentScore">
@@ -33,13 +32,9 @@
       <button class="btn newGame">NEW GAME</button>
       <button class="btn rollDice">🎲 ROLL THE DICE 🎲</button>
       <button class="btn hold">🤛🏻 HOLD 🤜🏻</button>
-      <img src="/pictures/dice-1.png" class="dice hidden">
-      <img src="/pictures/dice-2.png" class="dice hidden">
-      <img src="/pictures/dice-3.png" class="dice hidden">
-      <img src="/pictures/dice-4.png" class="dice hidden">
-      <img src="/pictures/dice-5.png" class="dice hidden">
-      <img src="/pictures/dice-6.png" class="dice hidden">
+      <img src="/pictures/dice-1.png" class="dice">
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
