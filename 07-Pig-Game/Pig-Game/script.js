@@ -13,24 +13,26 @@ const images = [
   "/pictures/dice-5.png",
   "/pictures/dice-6.png",
 ];
+let image;
 
 //Define functions
 
-//Generate random dice number
-const dice = Math.round(Math.random() * (6 - 1) + 1);
+//Click the dice button
+diceButton.addEventListener("click", function () {
+  //Generate random dice number
+  const dice = Math.round(Math.random() * (6 - 1) + 1);
 
-//Show according picture of a dice
-let image;
-for (let i = 1; i <= images.length; i++) {
-  if (dice === i) {
-    image = images[i - 1];
+  //Show according picture of a dice
+  for (let i = 1; i <= images.length; i++) {
+    if (dice === i) {
+      image = images[i - 1];
+    }
   }
-}
+  //Change the dice picture according to the random number
+  dicePicture.src = image;
+});
 
 //Define the actions when the page is loaded
 window.onload = function () {
   player1Box.classList.add("active");
-  dicePicture.src = image;
 };
-
-//Click the dice button
