@@ -39,26 +39,12 @@ diceButton.addEventListener("click", function () {
       dicePicture.src = image;
     }
   }
-
   if (number !== 1 && player1Box.classList.contains("active")) {
-    let currentScore1 = 0;
     currentScore1 += number;
     player1CurrentScore.textContent = currentScore1;
-    holdButton.addEventListener("click", function () {
-      totalScore1 = currentScore1;
-      player1TotalScore.textContent = totalScore1;
-      player1Box.classList.remove("active");
-      player2Box.classList.add("active");
-    });
   } else if (number !== 1 && player2Box.classList.contains("active")) {
     currentScore2 += number;
     player2CurrentScore.textContent = currentScore2;
-    holdButton.addEventListener("click", function () {
-      totalScore2 = currentScore2;
-      player2TotalScore.textContent = totalScore2;
-      player2Box.classList.remove("active");
-      player1Box.classList.add("active");
-    });
   } else if (number === 1) {
     if (player1Box.classList.contains("active")) {
       currentScore1 = 0;
@@ -68,23 +54,34 @@ diceButton.addEventListener("click", function () {
     } else if (player2Box.classList.contains("active")) {
       currentScore2 = 0;
       player2CurrentScore.textContent = currentScore2;
-
       player2Box.classList.remove("active");
       player1Box.classList.add("active");
     }
   }
 });
 
-//Define variables
-
-// if (player1Box.classList.length === 2) {
-//   while (dice > 1) {
-//     currentScore1 = dice;
-//   }
-// }
-
-// //Define the actions when the page is loaded
-// window.onload = function () {
-//   player1Box.classList.add("active");
-//   console.log(player1Box.classList.length);
-// };
+holdButton.addEventListener("click", function () {
+  if (player1Box.classList.contains("active")) {
+    totalScore1 += currentScore1;
+    player1TotalScore.textContent = totalScore1;
+    if (totalScore1 > 100) {
+      console.log("Player 1 is the winner");
+    } else {
+      player1Box.classList.remove("active");
+      player2Box.classList.add("active");
+      currentScore1 = 0;
+      player1CurrentScore.textContent = currentScore1;
+    }
+  } else if (player2Box.classList.contains("active")) {
+    totalScore2 += currentScore2;
+    player2TotalScore.textContent = totalScore2;
+    if (totalScore2 > 100) {
+      console.log("Player 2 is the winner");
+    } else {
+      player2Box.classList.remove("active");
+      player1Box.classList.add("active");
+      currentScore2 = 0;
+      player2CurrentScore.textContent = currentScore2;
+    }
+  }
+});
