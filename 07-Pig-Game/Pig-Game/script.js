@@ -5,6 +5,12 @@ const player1Box = document.querySelector(".player1Box");
 const player2Box = document.querySelector(".player2Box");
 const diceButton = document.querySelector(".rollDice");
 const dicePicture = document.querySelector(".dice");
+const holdButton = document.querySelector(".hold");
+let player1CurrentScore = document.getElementById("currentScore1");
+let player2CurrentScore = document.getElementById("currentScore2");
+let player1TotalScore = document.querySelector(".player1TotalScore");
+let player2TotalScore = document.querySelector(".player2TotalScore");
+
 const images = [
   "/pictures/dice-1.png",
   "/pictures/dice-2.png",
@@ -13,26 +19,72 @@ const images = [
   "/pictures/dice-5.png",
   "/pictures/dice-6.png",
 ];
-let image;
 
 //Define functions
 
+let currentScore1 = 0;
+let totalScore1 = 0;
+let currentScore2 = 0;
+let totalScore2 = 0;
+
 //Click the dice button
 diceButton.addEventListener("click", function () {
-  //Generate random dice number
-  const dice = Math.round(Math.random() * (6 - 1) + 1);
+  let number = Math.round(Math.random() * (6 - 1) + 1);
 
   //Show according picture of a dice
   for (let i = 1; i <= images.length; i++) {
-    if (dice === i) {
-      image = images[i - 1];
+    if (number === i) {
+      let image = images[i - 1];
+      //Change the dice picture according to the random number
+      dicePicture.src = image;
     }
   }
-  //Change the dice picture according to the random number
-  dicePicture.src = image;
+
+  if (number !== 1 && player1Box.classList.contains("active")) {
+    let currentScore1 = 0;
+    currentScore1 += number;
+    player1CurrentScore.textContent = currentScore1;
+    holdButton.addEventListener("click", function () {
+      totalScore1 = currentScore1;
+      player1TotalScore.textContent = totalScore1;
+      player1Box.classList.remove("active");
+      player2Box.classList.add("active");
+    });
+  } else if (number !== 1 && player2Box.classList.contains("active")) {
+    currentScore2 += number;
+    player2CurrentScore.textContent = currentScore2;
+    holdButton.addEventListener("click", function () {
+      totalScore2 = currentScore2;
+      player2TotalScore.textContent = totalScore2;
+      player2Box.classList.remove("active");
+      player1Box.classList.add("active");
+    });
+  } else if (number === 1) {
+    if (player1Box.classList.contains("active")) {
+      currentScore1 = 0;
+      player1CurrentScore.textContent = currentScore1;
+      player1Box.classList.remove("active");
+      player2Box.classList.add("active");
+    } else if (player2Box.classList.contains("active")) {
+      currentScore2 = 0;
+      player2CurrentScore.textContent = currentScore2;
+
+      player2Box.classList.remove("active");
+      player1Box.classList.add("active");
+    }
+  }
 });
 
-//Define the actions when the page is loaded
-window.onload = function () {
-  player1Box.classList.add("active");
-};
+//Define variables
+
+// if (player1Box.classList.length === 2) {
+//   while (dice > 1) {
+//     currentScore1 = dice;
+//   }
+// }
+
+// //Define the actions when the page is loaded
+// window.onload = function () {
+//   player1Box.classList.add("active");
+//   console.log(player1Box.classList.length);
+// };
