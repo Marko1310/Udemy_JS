@@ -6,6 +6,7 @@ const player2Box = document.querySelector(".player2Box");
 const diceButton = document.querySelector(".rollDice");
 const dicePicture = document.querySelector(".dice");
 const holdButton = document.querySelector(".hold");
+const newGameButton = document.querySelector(".newGame");
 let player1CurrentScore = document.getElementById("currentScore1");
 let player2CurrentScore = document.getElementById("currentScore2");
 let player1TotalScore = document.querySelector(".player1TotalScore");
@@ -84,4 +85,17 @@ holdButton.addEventListener("click", function () {
       player2CurrentScore.textContent = currentScore2;
     }
   }
+});
+
+newGameButton.addEventListener("click", function () {
+  player1Box.classList.add("active");
+  player2Box.classList.remove("active");
+  currentScore1 = 0;
+  currentScore2 = 0;
+  totalScore1 = 0;
+  totalScore2 = 0;
+  player1CurrentScore.textContent = currentScore1;
+  player2CurrentScore.textContent = currentScore2;
+  player1TotalScore.textContent = totalScore1;
+  player2TotalScore.textContent = totalScore2;
 });
