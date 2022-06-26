@@ -12,16 +12,6 @@ let player2CurrentScore = document.getElementById("currentScore2");
 let player1TotalScore = document.querySelector(".player1TotalScore");
 let player2TotalScore = document.querySelector(".player2TotalScore");
 
-//Insert all the images to an array
-const images = [
-  "/pictures/dice-1.png",
-  "/pictures/dice-2.png",
-  "/pictures/dice-3.png",
-  "/pictures/dice-4.png",
-  "/pictures/dice-5.png",
-  "/pictures/dice-6.png",
-];
-
 //Define scores
 let currentScore1 = 0;
 let totalScore1 = 0;
@@ -31,15 +21,8 @@ let totalScore2 = 0;
 //Click the dice button
 diceButton.addEventListener("click", function () {
   let number = Math.round(Math.random() * (6 - 1) + 1);
-
-  //Show according picture of a dice
-  for (let i = 1; i <= images.length; i++) {
-    if (number === i) {
-      let image = images[i - 1];
-      //Change the dice picture according to the random number
-      dicePicture.src = image;
-    }
-  }
+  //Show according picture
+  dicePicture.src = `/pictures/dice-${number}.png`;
   dicePicture.classList.remove("hidden");
 
   //If number is not equal to 1 and Player 1 is active: add points to Player 1
@@ -74,7 +57,7 @@ holdButton.addEventListener("click", function () {
     totalScore1 += currentScore1;
     player1TotalScore.textContent = totalScore1;
     //If Total score is >= 100, Player 1 wins ---- Implement change of DOM
-    if (totalScore1 >= 10) {
+    if (totalScore1 >= 100) {
       player1Box.classList.add("winnerBox");
       document.getElementById("1").classList.add("winnerPlayer");
       diceButton.disabled = true;
@@ -91,7 +74,7 @@ holdButton.addEventListener("click", function () {
     totalScore2 += currentScore2;
     player2TotalScore.textContent = totalScore2;
     //If Total score is >= 100, Player 2 wins ---- Implement change of DOM
-    if (totalScore2 >= 10) {
+    if (totalScore2 >= 100) {
       player2Box.classList.add("winnerBox");
       document.getElementById("2").classList.add("winnerPlayer");
       diceButton.disabled = true;
