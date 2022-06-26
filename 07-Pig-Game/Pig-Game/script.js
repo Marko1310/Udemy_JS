@@ -12,6 +12,7 @@ let player2CurrentScore = document.getElementById("currentScore2");
 let player1TotalScore = document.querySelector(".player1TotalScore");
 let player2TotalScore = document.querySelector(".player2TotalScore");
 
+//Insert all the images to an array
 const images = [
   "/pictures/dice-1.png",
   "/pictures/dice-2.png",
@@ -21,8 +22,7 @@ const images = [
   "/pictures/dice-6.png",
 ];
 
-//Define functions
-
+//Define scores
 let currentScore1 = 0;
 let totalScore1 = 0;
 let currentScore2 = 0;
@@ -40,12 +40,19 @@ diceButton.addEventListener("click", function () {
       dicePicture.src = image;
     }
   }
+  dicePicture.classList.remove("hidden");
+
+  //If number is not equal to 1 and Player 1 is active: add points to Player 1
   if (number !== 1 && player1Box.classList.contains("active")) {
     currentScore1 += number;
     player1CurrentScore.textContent = currentScore1;
+
+    //If number is not equal to 1 and Player 2 is active: add points to Player 2
   } else if (number !== 1 && player2Box.classList.contains("active")) {
     currentScore2 += number;
     player2CurrentScore.textContent = currentScore2;
+
+    //If number is equal to 1: change player
   } else if (number === 1) {
     if (player1Box.classList.contains("active")) {
       currentScore1 = 0;
@@ -62,22 +69,33 @@ diceButton.addEventListener("click", function () {
 });
 
 holdButton.addEventListener("click", function () {
+  //If Player 1 is active: add to total score of Player 1
   if (player1Box.classList.contains("active")) {
     totalScore1 += currentScore1;
     player1TotalScore.textContent = totalScore1;
-    if (totalScore1 > 100) {
-      console.log("Player 1 is the winner");
+    //If Total score is >= 100, Player 1 wins ---- Implement change of DOM
+    if (totalScore1 >= 10) {
+      player1Box.classList.add("winnerBox");
+      document.getElementById("1").classList.add("winnerPlayer");
+      diceButton.disabled = true;
+      holdButton.disabled = true;
     } else {
       player1Box.classList.remove("active");
       player2Box.classList.add("active");
       currentScore1 = 0;
       player1CurrentScore.textContent = currentScore1;
     }
+
+    //If Player 2 is active: add to total score of Player 2
   } else if (player2Box.classList.contains("active")) {
     totalScore2 += currentScore2;
     player2TotalScore.textContent = totalScore2;
-    if (totalScore2 > 100) {
-      console.log("Player 2 is the winner");
+    //If Total score is >= 100, Player 2 wins ---- Implement change of DOM
+    if (totalScore2 >= 10) {
+      player2Box.classList.add("winnerBox");
+      document.getElementById("2").classList.add("winnerPlayer");
+      diceButton.disabled = true;
+      holdButton.disabled = true;
     } else {
       player2Box.classList.remove("active");
       player1Box.classList.add("active");
@@ -87,6 +105,7 @@ holdButton.addEventListener("click", function () {
   }
 });
 
+//New game button: restart everything
 newGameButton.addEventListener("click", function () {
   player1Box.classList.add("active");
   player2Box.classList.remove("active");
@@ -98,4 +117,11 @@ newGameButton.addEventListener("click", function () {
   player2CurrentScore.textContent = currentScore2;
   player1TotalScore.textContent = totalScore1;
   player2TotalScore.textContent = totalScore2;
+  dicePicture.classList.add("hidden");
+  diceButton.disabled = false;
+  holdButton.disabled = false;
+  player1Box.classList.remove("winnerBox");
+  player2Box.classList.remove("winnerBox");
+  document.getElementById("1").classList.remove("winnerPlayer");
+  document.getElementById("2").classList.removve("winnerPlayer");
 });

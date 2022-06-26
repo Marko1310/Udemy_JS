@@ -54,6 +54,15 @@ body {
   color: rgb(1, 1, 1);
   background-color: rgba(255, 255, 255, 0.4);
 }
+
+.winnerBox {
+  background-color: rgb(22, 21, 21);
+}
+
+.winnerPlayer {
+  color: #c7365f;
+}
+
 .name {
   margin: 0;
   margin-bottom: 3rem;
@@ -109,6 +118,15 @@ p {
   padding: 20px;
 }
 
+.current {
+  color: white;
+}
+
+#currentScore1,
+#currentScore2 {
+  color: white;
+}
+
 .btn {
   position: absolute;
   left: 50%;
@@ -117,7 +135,7 @@ p {
   border-radius: 20px;
   border-style: none;
   opacity: 0.7;
-  padding: 10px;
+  padding: 10px 20px 10px 20px;
   font: inherit;
   font-weight: bold;
   transition-duration: 0.2s;
