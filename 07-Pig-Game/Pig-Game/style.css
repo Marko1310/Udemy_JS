@@ -9,6 +9,7 @@ body {
   justify-content: center;
   font-family: "Nunito";
   font-weight: 200;
+  height: 100vh;
 }
 
 .mainBox {
@@ -106,12 +107,16 @@ p {
   padding: 10px 20px 10px 20px;
   font: inherit;
   font-weight: bold;
-  transition-duration: 0.2s;
+  transition: all 0.2s;
 }
 
 .btn:hover {
   color: white;
   opacity: 1;
+}
+
+.btn:active {
+  transform: translate(-50%, 3px);
 }
 
 .newGame {
