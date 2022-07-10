@@ -38,7 +38,7 @@ const game = {
     team2: 6.5,
   },
 };
-
+// CHALLENGE #1
 // Create team players arrays
 const [players1, players2] = game.players;
 // Create gk variable and fieldplayers variables
@@ -60,11 +60,57 @@ const printGoals = function (...players) {
   console.log(`${players.length} goals were scored`);
 };
 
-printGoals(...game.scored);
+// printGoals(...game.scored);
 
 //The team with the lower odd is more likely to win. Print to the console which team is more likely to win, WITHOUT using an if/else statement or the ternary operator.
 
-game.odds.team1 < game.odds.team2 &&
-  console.log("Team 2 is more likely to win");
-game.odds.team1 > game.odds.team2 &&
-  console.log("Team 1 is more likely to win");
+// game.odds.team1 < game.odds.team2 &&
+//   console.log("Team 2 is more likely to win");
+// game.odds.team1 > game.odds.team2 &&
+//   console.log("Team 1 is more likely to win");
+
+// CHALLENGE #2
+// 1. Loop over the game.scored array and print each player name to the console, along with the goal number (Example: "Goal 1: Lewandowski")
+let goal = 0;
+for (const player of game.scored) {
+  goal++;
+  console.log(`Goal ${goal}: ${player}`);
+}
+
+// 2. Use a loop to calculate the average odd and log it to the console
+let totalOdds = 0;
+let averageOdds = 0;
+let odds = Object.values(game.odds);
+// console.log(properties);
+
+for (const odd of odds) {
+  totalOdds += odd;
+}
+averageOdds = totalOdds / odds.length;
+console.log(`Average odds are ${averageOdds}`);
+
+// 3. Print the 3 odds to the console, but in a nice formatted way, exaclty like this:
+//       Odd of victory Bayern Munich: 1.33
+//       Odd of draw: 3.25
+//       Odd of victory Borrussia Dortmund: 6.5
+// Get the team names directly from the game object, don't hardcode them (except for "draw"). HINT: Note how the odds and the game objects have the same property names 😉
+
+for (let [team, odd] of Object.entries(game.odds)) {
+  teamStr = team;
+  teamStr === "x"
+    ? (teamStr = "a draw is")
+    : (teamStr = `victory ${game[team]}`);
+
+  console.log(`Odd of ${teamStr} is ${odd}`);
+}
+
+// console.log(`Odd of victory ${game.team1} is ${game.odds.team1}`);
+// console.log(`Odd a draw is ${game.odds.x}`);
+// console.log(`Odd of victory ${game.team2} is ${game.odds.team2}`);
+
+// for (const [team, odd] of Object.entries(game.odds)) {
+//   teamStr = team;
+//   console.log(`Odd of ${teamStr} is `);
+// }
+
+// console.log(Object.entries(game.odds));
