@@ -34,21 +34,26 @@ const poll = {
   registerNewAnswer: function () {
     let number = Number(
       prompt(
-        "What is your favourite programming language?\n 0: JavaScript\n 1: Python\n 2: Rust\n 3: C++ \n(Write option number)"
+        `${this.question}\n${this.options[0]}\n${this.options[1]}\n${this.options[2]}\n${this.options[3]}\n(Write option number)`
       )
     );
     if (typeof number === "number" && number >= 0 && number <= 3) {
       this.answers[number]++;
-      console.log(this.answers);
     }
-    const displayResults = function (type) {
-      if (typeof type === "array") {
-        console.log(type);
-      }
-    };
+    this.displayResults();
+    this.displayResults("string");
+  },
+  displayResults: function (type = "array") {
+    if (type === "array") {
+      console.log(this.answers);
+    } else if (type === "string") {
+      console.log(`Poll results are ${this.answers.join(", ")}`);
+    }
   },
 };
 
 const fun = poll.registerNewAnswer.bind(poll);
 
 document.querySelector(".poll").addEventListener("click", fun);
+
+poll.displayResults.call({ answers: [5, 2, 3] });
