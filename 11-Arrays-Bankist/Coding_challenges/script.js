@@ -14,3 +14,31 @@ HINT: Use tools from all lectures in this section so far 😉
 TEST DATA 1: Julia's data [3, 5, 2, 12, 7], Kate's data [4, 1, 15, 8, 3]
 TEST DATA 2: Julia's data [9, 16, 6, 8, 3], Kate's data [10, 5, 6, 1, 4]
 */
+
+const dogsJulia = [3, 5, 2, 12, 7];
+const dogsKate = [4, 1, 15, 8, 3];
+
+const checkDogs = function (arr1, arr2) {
+  const arr1New = arr1.slice();
+  arr1New.splice(0, 1);
+  arr1New.splice(-2, 2);
+
+  arr1.forEach(function (years, i, arr1) {
+    years >= 3
+      ? console.log(
+          `Dog number ${i + 1} is an adult, and is ${years} years old`
+        )
+      : console.log(`Dog number ${i + 1} is still a puppy 🐶`);
+  });
+
+  console.log("");
+  arr2.forEach(function (years, i, arr1) {
+    years >= 3
+      ? console.log(
+          `Dog number ${i + 1} is an adult, and is ${years} years old`
+        )
+      : console.log(`Dog number ${i + 1} is still a puppy 🐶`);
+  });
+};
+
+checkDogs(dogsJulia, dogsKate);
