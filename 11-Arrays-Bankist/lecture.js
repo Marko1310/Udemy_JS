@@ -4,7 +4,8 @@
 
 ///////////////////////////////////////////////
 
-// let arr = ["a", "b", "c", "d", "e"];
+/*
+let arr = ["a", "b", "c", "d", "e"];
 
 // SLICE
 console.log(arr.slice(2));
@@ -75,3 +76,50 @@ console.log(currenciesUnique);
 currenciesUnique.forEach(function (value, key, map) {
   console.log(`${key}: ${value}`);
 });
+*/
+
+// MAP METHOD
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const eurToUsd = 1.1;
+
+const movementUSD = movements.map(function (mov) {
+  return mov * 1.1;
+});
+
+console.log(movementUSD);
+
+const movementDescription = movements.map(
+  (mov, i) =>
+    `Movement ${i + 1}: You ${mov > 0 ? "deposited" : "withdrew"} ${Math.abs(
+      mov
+    )}`
+);
+
+console.log(movementDescription);
+
+// FILTER ARRAY
+const deposits = movements.filter(function (mov) {
+  return mov > 0;
+});
+console.log(deposits);
+
+const withdrawals = movements.filter(function (moving) {
+  return moving < 0;
+});
+
+console.log(withdrawals);
+
+console.log(movements);
+const balance = movements.reduce(function (acc, cur, i, arr) {
+  return acc + cur;
+}, 100);
+console.log(balance);
+
+// Maximun value REDUCE
+const max = movements.reduce(function (acc, cur, i, arr) {
+  if (cur > acc) return cur;
+  else return acc;
+});
+
+console.log(max);
