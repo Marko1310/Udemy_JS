@@ -81,5 +81,6 @@ const init = function () {
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   console.log("Test code");
+  console.log("Test code - test branch");
 };
 init();
