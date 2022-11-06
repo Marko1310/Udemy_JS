@@ -80,6 +80,5 @@ const init = function () {
   recipeView.addHandlerUpdateServings(controlServings);
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
-  console.log("Test code");
 };
 init();
