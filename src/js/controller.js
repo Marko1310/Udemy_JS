@@ -82,5 +82,6 @@ const init = function () {
   paginationView.addHandlerClick(controlPagination);
   console.log("Test code");
   console.log("Test code - test branch");
+  console.log("Test code - test branch2");
 };
 init();
