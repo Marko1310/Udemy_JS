@@ -16,5 +16,14 @@
     "core-js": "^3.26.0",
     "fractional": "^1.0.0",
     "regenerator-runtime": "^0.13.10"
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marko1310/Udemy_JS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Marko1310/Udemy_JS/issues"
+  },
+  "homepage": "https://github.com/Marko1310/Udemy_JS#readme"
 }

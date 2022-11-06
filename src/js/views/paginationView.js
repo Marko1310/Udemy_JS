@@ -27,7 +27,7 @@ class PaginationView extends View {
       }" class="btn--inline pagination__btn--next">
             <span>Page ${curPage + 1}</span>
             <svg class="search__icon">
-              <use href="${icons}icon-arrow-right"></use>
+              <use href="${icons}#icon-arrow-right"></use>
             </svg>
           </button>`;
     }
@@ -60,7 +60,7 @@ class PaginationView extends View {
       }" class="btn--inline pagination__btn--next">
             <span>Page ${curPage + 1}</span>
             <svg class="search__icon">
-              <use href="${icons}icon-arrow-right"></use>
+              <use href="${icons}#icon-arrow-right"></use>
             </svg>
           </button>`;
     }
